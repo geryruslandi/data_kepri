@@ -14,5 +14,17 @@
 
 
 <ion-content padding>
-
+  <ion-grid>
+    <ion-row *ngFor="let ds of dataSubyek;let i = index">
+      <ion-col col-2>
+        <ion-icon name="checkmark-circle-outline" ></ion-icon>
+      </ion-col>
+      <ion-col col-8>
+        <p>{{(ds.subjectName.length>6)? (ds.subjectName | slice:0:40)+' .....':(ds.subjectName) }}</p>
+      </ion-col>
+      <ion-col col-2>
+        <ion-icon name="md-arrow-round-forward" style="float:right"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 //pages
-import { GeografiPemerintahanPage } from '../../pages/geografi-pemerintahan/geografi-pemerintahan';
+import { SubyekPage } from '../subyek/subyek';
 
 @Component({
   selector: 'page-home',
@@ -17,7 +17,7 @@ export class HomePage {
   public openPage(bab){
     switch(bab){
       case 'bab1':
-        this.navCtrl.push(GeografiPemerintahanPage,{
+        this.navCtrl.push(SubyekPage,{
           data:bab
         });
         break;

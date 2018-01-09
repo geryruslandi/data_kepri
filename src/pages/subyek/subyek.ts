@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+//service
+import {dataProvider} from '../../services/data-provider.service';
+
+
+
 /**
  * Generated class for the SubyekPage page.
  *
@@ -15,7 +20,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SubyekPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public dataSubyek:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dp : dataProvider) {
+    this.dataSubyek = dp.getData(navParams.get('data'));
+    console.log(this.dataSubyek);
   }
 
   ionViewDidLoad() {
