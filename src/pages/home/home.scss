@@ -1,3 +1,32 @@
 page-home {
-
+  .panel{
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+  }
+  .panel-default {
+    border-color: #ddd;
+  }
+  .icon-box{
+      border-radius: 20px;
+      margin:0px 30px;
+  }
+  .icon-box img{
+    height: auto;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .panel-default p{
+    color: #3e81bb;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
 }
