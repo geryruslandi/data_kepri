@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the GeografiPemerintahanPage page.
+ * Generated class for the SubyekPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-geografi-pemerintahan',
-  templateUrl: 'geografi-pemerintahan.html',
+  selector: 'page-subyek',
+  templateUrl: 'subyek.html',
 })
-export class GeografiPemerintahanPage {
+export class SubyekPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GeografiPemerintahanPage');
+    console.log('ionViewDidLoad SubyekPage');
   }
 
 }
