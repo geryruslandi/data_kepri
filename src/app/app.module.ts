@@ -7,6 +7,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SubyekPage } from '../pages/subyek/subyek';
+import { DataSubyekPage } from '../pages/data-subyek/data-subyek';
+
 
 
 //service
@@ -16,7 +18,8 @@ import { dataProvider } from '../services/data-provider.service';
   declarations: [
     MyApp,
     HomePage,
-    SubyekPage
+    SubyekPage,
+    DataSubyekPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { dataProvider } from '../services/data-provider.service';
   entryComponents: [
     MyApp,
     HomePage,
-    SubyekPage
+    SubyekPage,
+    DataSubyekPage
   ],
   providers: [
     StatusBar,

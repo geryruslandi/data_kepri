@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { DataSubyekPage } from '../data-subyek/data-subyek';
 
 //service
 import {dataProvider} from '../../services/data-provider.service';
@@ -26,8 +28,10 @@ export class SubyekPage {
     console.log(this.dataSubyek);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SubyekPage');
+  public openDataSubyek(index){
+    this.navCtrl.push(DataSubyekPage,{
+      data:this.dataSubyek[index]
+    });
   }
 
 }
