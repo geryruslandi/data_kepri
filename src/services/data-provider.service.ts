@@ -23,17 +23,17 @@ export class dataProvider{
         ],
         [
           "Bintan",
-          "1 318,21",
+          "1318,21",
           "6 m"
         ],
         [
           "Natuna",
-          "2 009,04",
+          "2009,04",
           "14 m"
         ],
         [
           "Lingga",
-          "2 266,77",
+          "2266,77",
           "6 m"
         ],
         [
@@ -183,7 +183,7 @@ export class dataProvider{
         [
           "Karimun",
           "251",
-          "1. Pulau Karimun Anak; 2. Pulau Iyu Kecil"
+          "1. Pulau Karimun Anak 2. Pulau Iyu Kecil"
         ],
         [
           "Bintan",

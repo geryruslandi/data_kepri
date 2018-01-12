@@ -14,28 +14,35 @@
 
 
 <ion-content padding>
-  <table>
-    <thead>
-      <tr>
-        <th *ngFor="let col of dataCol">{{col}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let data of dataRow">
-        <ng-container *ngIf="data.length == dataCol.length">
-          <td *ngFor="let d of data" style="padding-left:20px" style="width:100%">
-            {{d}}
-          </td>
-        </ng-container>
-        <ng-container *ngIf="data.length != dataCol.length">
-          <td>
-            {{data}}
-          </td>
-          <td>
-          </td>
-          <td></td>
-        </ng-container>
-      </tr>
-    </tbody>
-  </table>
+  <div class="tableContainer">
+    <table>
+      <thead>
+        <tr>
+          <th *ngFor="let col of dataCol" style="width:100%">{{col}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of dataRow">
+          <ng-container *ngIf="data.length == dataCol.length">
+            <td *ngFor="let d of data ;let dataIndex = index" style="padding-left:20px" style="width:100%">
+              <ng-container *ngIf="dataIndex == 0">
+                &nbsp;&nbsp;&nbsp;{{d}}
+              </ng-container>
+              <ng-container *ngIf="dataIndex != 0">
+                {{d}}
+              </ng-container>
+            </td>
+          </ng-container>
+          <ng-container *ngIf="data.length != dataCol.length">
+            <td>
+              <b>{{data}}</b>
+            </td>
+            <td>
+            </td>
+            <td></td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </ion-content>
