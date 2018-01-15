@@ -2073,6 +2073,8 @@ export class dataProvider{
     switch(bab){
       case 'bab1':
         return this.dataBab1
+      case 'bab2':
+        return this.dataBab2
     }
   }
 

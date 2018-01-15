@@ -21,6 +21,12 @@ export class HomePage {
           data:bab
         });
         break;
+      case 'bab2':
+        this.navCtrl.push(SubyekPage,{
+          data:bab
+        });
+        break;
+
     }
 
 

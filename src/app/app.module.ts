@@ -7,7 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SubyekPage } from '../pages/subyek/subyek';
+import { IndikatorPage } from '../pages/indikator/indikator';
 import { DataSubyekPage } from '../pages/data-subyek/data-subyek';
+import { ChartsModule } from 'ng2-charts';
+
+// In your App's module:
 
 
 
@@ -19,10 +23,12 @@ import { dataProvider } from '../services/data-provider.service';
     MyApp,
     HomePage,
     SubyekPage,
-    DataSubyekPage
+    DataSubyekPage,
+    IndikatorPage
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -30,7 +36,8 @@ import { dataProvider } from '../services/data-provider.service';
     MyApp,
     HomePage,
     SubyekPage,
-    DataSubyekPage
+    DataSubyekPage,
+    IndikatorPage
   ],
   providers: [
     StatusBar,
