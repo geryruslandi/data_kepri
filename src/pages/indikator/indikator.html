@@ -19,7 +19,7 @@
       <ion-row *ngFor="let di of dataIndikator">
         <ion-col *ngFor="let data of di" col-6>
           <div class="panelItems">
-            <div class="panelHeader">
+            <div class="panelHeader" [ngStyle]="{'background-color':data.color}">
               <ion-grid>
                 <ion-row>
                   <ion-col col-4 class="panelIcon">
