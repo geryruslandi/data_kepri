@@ -16,9 +16,9 @@ import { ChartsModule } from 'ng2-charts';
 })
 export class IndikatorPage {
 
-  dataIndikator : any=[];
-  dataIndikatorAll : any=[];
-  color :String[] = [
+  public dataIndikator : any=[];
+  public dataIndikatorAll : any=[];
+  public color :String[] = [
     '#2ecc71',
     '#3498db',
     '#1abc9c',
@@ -35,13 +35,50 @@ export class IndikatorPage {
     '#87D37C',
     '#68C3A3'
   ]
+  public lineChartData:Array<any> = [];
+  /*public lineChartData:Array<any> = [[
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
+    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
+  ];]*/
+  public lineChartLabels:Array<any> =[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log(this.navParams.data)
 
     var tableData = this.navParams.data.data.data
     var tableCol = this.navParams.data.data.column
 
+    console.log(tableData)
+
+    //Providing Chart Datas
+    //column
+    for(var i = 1 ; i < tableCol.length ; i++){
+      this.lineChartLabels.push(tableCol[i]);
+    }
+    //row
+    for(var i = 0 ; i < tableData.length ; i++){
+      var chartData = [];
+      var labelData = "";
+      if(tableData[i].length != 1){
+        console.log(i);
+        labelData = tableData[i][0];
+        for(var i2 = 1 ; i2 < tableData[i].length;i2++){
+          var tempConvert;
+          try{
+            tempConvert = tableData[i][i2];
+            tempConvert = tempConvert.replace(',','.');
+            tempConvert = Math.floor(tempConvert);
+          }
+          catch(ex){
+            tempConvert = 0;
+          }
+          chartData.push(tempConvert);
+        }
+        this.lineChartData.push({data:chartData,label:labelData});
+      }
+    }
+    console.log(this.lineChartData);
+    console.log(this.lineChartLabels);
     //buat data
     for(var i=0 ; i < tableData.length;i++){
 
@@ -56,12 +93,9 @@ export class IndikatorPage {
 
       }
     }
-
-    console.log(this.dataIndikatorAll)
     //1 row 2 data
     for(var i = 0 ; i < this.dataIndikatorAll.length;i++){
       if(i%2 == 0){
-        console.log(i);
         this.dataIndikator.push([]);
         this.dataIndikator[this.dataIndikator.length-1].push(this.dataIndikatorAll[i])
       }
@@ -69,16 +103,8 @@ export class IndikatorPage {
         this.dataIndikator[this.dataIndikator.length-1].push(this.dataIndikatorAll[i])
       }
     }
-    console.log('dataIndikator')
-    console.log(this.dataIndikator)
   }
   // lineChart
- public lineChartData:Array<any> = [
-   {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-   {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
-   {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
- ];
- public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
  public lineChartOptions:any = {
    responsive: true
  };
