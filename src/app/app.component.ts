@@ -10,7 +10,7 @@ import { IndikatorPage } from '../pages/indikator/indikator';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = IndikatorPage;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

@@ -16,8 +16,8 @@
 <ion-content padding>
   <div class="panel">
     <ion-grid>
-      <ion-row>
-        <ion-col>
+      <ion-row *ngFor="let di of dataIndikator">
+        <ion-col *ngFor="let data of di" col-6>
           <div class="panelItems">
             <div class="panelHeader">
               <ion-grid>
@@ -26,54 +26,18 @@
                     <ion-icon name="folder"></ion-icon>
                   </ion-col>
                   <ion-col col-8 class="PanelHeaderText">
-                    <p><b>Batam</b></p>
-                    <p>Inflasi</p>
+                    <p><b>{{data.title}}</b></p>
+                    <p>sub</p>
                   </ion-col>
                 </ion-row>
               </ion-grid>
             </div>
             <div class="panelBody">
               <table>
-                <tr>
-                  <td>Luas Daratan (km 2 )</td>
+                <tr *ngFor="let dataDetail of data.data">
+                  <td>{{dataDetail.col}}</td>
                   <td style="padding:0px 5px">:</td>
-                  <td>913</td>
-                </tr>
-                <tr>
-                  <td>Tinggi Tempat (dpl)</td>
-                  <td style="padding:0px 5px">:</td>
-                  <td>5 m</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="panelItems">
-            <div class="panelHeader">
-              <ion-grid>
-                <ion-row>
-                  <ion-col col-4 class="panelIcon">
-                    <ion-icon name="folder"></ion-icon>
-                  </ion-col>
-                  <ion-col col-8 class="PanelHeaderText">
-                    <p><b>Batam</b></p>
-                    <p>Inflasi</p>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-            </div>
-            <div class="panelBody">
-              <table>
-                <tr>
-                  <td>Luas Daratan (km 2 )</td>
-                  <td style="padding:0px 5px">:</td>
-                  <td>913</td>
-                </tr>
-                <tr>
-                  <td>Tinggi Tempat (dpl)</td>
-                  <td style="padding:0px 5px">:</td>
-                  <td>5 m</td>
+                  <td>{{dataDetail.data}}</td>
                 </tr>
               </table>
             </div>

@@ -16,7 +16,61 @@ import { ChartsModule } from 'ng2-charts';
 })
 export class IndikatorPage {
 
+  dataIndikator : any=[];
+  dataIndikatorAll : any=[];
+  color :String[] = [
+    '#2ecc71',
+    '#3498db',
+    '#1abc9c',
+    '#9b59b6',
+    '#e67e22',
+    '#f1c40f',
+    '#e74c3c',
+    '#913D88',
+    '#446CB3',
+    '#4183D7',
+    '#81CFE0',
+    '#336E7B',
+    '#4ECDC4',
+    '#87D37C',
+    '#68C3A3'
+  ]
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(this.navParams.data)
+
+    var tableData = this.navParams.data.data.data
+    var tableCol = this.navParams.data.data.column
+
+    //buat data
+    for(var i=0 ; i < tableData.length;i++){
+
+      //jika bukan header
+      if(tableData[i].length != 1){
+        this.dataIndikatorAll.push({title:tableData[i][0],data:[],color:this.color[Math.floor(Math.random()* this.color.length)]})
+
+        //push data per column
+        for(var i2 = 1 ; i2 < tableCol.length ; i2++){
+          this.dataIndikatorAll[this.dataIndikatorAll.length-1].data.push({col:tableCol[i2],data:tableData[i][i2]})
+        }
+
+      }
+    }
+
+    console.log(this.dataIndikatorAll)
+    //1 row 2 data
+    for(var i = 0 ; i < this.dataIndikatorAll.length;i++){
+      if(i%2 == 0){
+        console.log(i);
+        this.dataIndikator.push([]);
+        this.dataIndikator[this.dataIndikator.length-1].push(this.dataIndikatorAll[i])
+      }
+      else{
+        this.dataIndikator[this.dataIndikator.length-1].push(this.dataIndikatorAll[i])
+      }
+    }
+    console.log('dataIndikator')
+    console.log(this.dataIndikator)
   }
   // lineChart
  public lineChartData:Array<any> = [
