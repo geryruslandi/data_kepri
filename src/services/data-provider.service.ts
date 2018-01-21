@@ -1321,7 +1321,8 @@ export class dataProvider{
         "Kabupaten/kota",
         "Laki-laki",
         "Perempuan",
-        "Jumlah"
+        "Jumlah",
+        "Rasio Kelamin"
       ],
       data:[
         [
